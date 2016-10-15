@@ -36,6 +36,7 @@ class PropertyFinderApp extends React.Component {
         style={styles.container}
         initialRoute={{
           title: 'Let\'s Find a Home',
+          //This is using the new component, SearchPage, which I added.
           component: SearchPage
         }}/>
     );
