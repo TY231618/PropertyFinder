@@ -1,5 +1,7 @@
 'use strict';
 
+var SearchResults = require('./SearchResults');
+
 //This is a destructuring assignment, which lets you extract multiple object properties
 //and assign them to variables using a single statement. As a result, the rest of your code
 //can drop the React prefix; for example, you can refer directly to StyleSheet rather than ReactNative.StyleSheet.
@@ -101,7 +103,11 @@ class SearchPage extends Component {
   _handleResponse(response) {
     this.setState({ isLoading: false , message: '' });
     if (response.application_response_code.substr(0, 1) === '1') {
-      console.log('Properties found: ' + response.listings.length);
+      this.props.navigator.push({
+        title: 'Results',
+        component: SearchResults,
+        passProps: {listings: response.listings}
+      });
     } else {
       this.setState({ message: 'Location not recognized; please try again.'});
     }
