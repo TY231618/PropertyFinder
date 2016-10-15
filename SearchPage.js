@@ -69,8 +69,12 @@ class SearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchString: 'london'
+      searchString: 'london',
+      isLoading: false
     };
+  }
+  onSearchTextChanged(event) {
+    this.setState({ searchString: event.nativeEvent.text });
   }
   render() {
     return (
@@ -85,6 +89,7 @@ class SearchPage extends Component {
           <TextInput
             style={styles.searchInput}
             value={this.state.searchString}
+            onChange={this.onSearchTextChanged.bind(this)}
             placeholder='Search via name or postcode'/>
           <TouchableHighlight style={styles.button}
               underlayColor='#99d9f4'>
