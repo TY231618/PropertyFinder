@@ -4,6 +4,7 @@
 //loads the react and react-native modules
 var React = require('react');
 var ReactNative = require('react-native');
+var SearchPage = require('./SearchPage');
 
 //StyleSheet class used to style the app
 var styles = ReactNative.StyleSheet.create({
@@ -34,8 +35,8 @@ class PropertyFinderApp extends React.Component {
       <ReactNative.NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'Let\'s Find Home',
-          component: HelloMate,
+          title: 'Let\'s Find a Home',
+          component: SearchPage
         }}/>
     );
   }
