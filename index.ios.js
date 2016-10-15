@@ -19,7 +19,9 @@ var styles = ReactNative.StyleSheet.create({
 //Components contain immutable properties, mutable state variables and expose a method for rendering.
 class PropertyFinderApp extends React.Component {
   render() {
-    return React.createElement(ReactNative.Text, {style: styles.text}, "Hello Rafa Benitez!");
+    // return React.createElement(ReactNative.Text, {style: styles.text}, "Hello Rafa Benitez!");
+    return <ReactNative.Text style={styles.text}>Hello Rafa (Again)</ReactNative.Text>;
+    //The above is JSX, or JavaScript syntax extension, which mixes HTML-like syntax directly in your JavaScript code;
   }
 }
 
